@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://c27ti38ehkfja"]
+
+[ext_resource type="Script" path="res://gameover.gd" id="1_va8va"]
+[ext_resource type="Texture2D" uid="uid://io142qcwhp7n" path="res://Battle Folder/Sprite/GameOver sprites/Retry.png" id="2_cd4rv"]
+[ext_resource type="Texture2D" uid="uid://biu7i2v7gd8tt" path="res://Battle Folder/Sprite/GameOver sprites/gamemoverscreen.png" id="2_y18ge"]
+[ext_resource type="Texture2D" uid="uid://crmadrgfsco6u" path="res://Battle Folder/Sprite/GameOver sprites/Menu.png" id="3_teg5r"]
+[ext_resource type="AudioStream" uid="uid://clxob4gd1urbn" path="res://Battle Folder/Sprite/GameOver sprites/GameOver.mp3" id="5_itixh"]
+
+[node name="gameover" type="CanvasLayer"]
+script = ExtResource("1_va8va")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(568, 332)
+scale = Vector2(0.9125, 0.944445)
+texture = ExtResource("2_y18ge")
+
+[node name="Retry" type="Button" parent="."]
+offset_left = 192.0
+offset_top = 296.0
+offset_right = 416.0
+offset_bottom = 392.0
+
+[node name="Retry" type="Sprite2D" parent="Retry"]
+position = Vector2(116, 40)
+scale = Vector2(6.54545, 4.8)
+texture = ExtResource("2_cd4rv")
+
+[node name="Main Menu" type="Button" parent="."]
+offset_left = 824.0
+offset_top = 288.0
+offset_right = 1056.0
+offset_bottom = 384.0
+
+[node name="Menu" type="Sprite2D" parent="Main Menu"]
+position = Vector2(112, 49)
+scale = Vector2(6.78788, 4.7)
+texture = ExtResource("3_teg5r")
+
+[node name="GameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_itixh")
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]

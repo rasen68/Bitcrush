@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctjn7qiihsxre"]
+
+[ext_resource type="Texture2D" uid="uid://b17dtoenx26d4" path="res://Battle Folder/Sprite/youWin!.jpg" id="1_2e3gr"]
+[ext_resource type="Script" path="res://Battle Folder/MenuYouWin.gd" id="2_h78dw"]
+[ext_resource type="Texture2D" uid="uid://crmadrgfsco6u" path="res://Battle Folder/Sprite/GameOver sprites/Menu.png" id="2_s7fq2"]
+
+[node name="PlayerWin" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576.25, 327)
+scale = Vector2(4.81799, 3.56667)
+texture = ExtResource("1_2e3gr")
+
+[node name="MenuYouWin" type="Button" parent="."]
+offset_left = 464.0
+offset_top = 464.0
+offset_right = 696.0
+offset_bottom = 536.0
+script = ExtResource("2_h78dw")
+
+[node name="Sprite2D" type="Sprite2D" parent="MenuYouWin"]
+position = Vector2(104, 32)
+scale = Vector2(7.77273, 5.7)
+texture = ExtResource("2_s7fq2")
+
+[connection signal="pressed" from="MenuYouWin" to="MenuYouWin" method="_on_pressed"]

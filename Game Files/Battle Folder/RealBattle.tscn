@@ -1,0 +1,486 @@
+[gd_scene load_steps=63 format=3 uid="uid://bi7y2f3qsaexf"]
+
+[ext_resource type="Script" path="res://Battle Folder/Script/RealBattle.gd" id="1_uxlrh"]
+[ext_resource type="PackedScene" uid="uid://nvfi3i7juano" path="res://Battle Folder/idle_arrow_left.tscn" id="2_ay53c"]
+[ext_resource type="PackedScene" uid="uid://dbhuepgmdy2sm" path="res://Battle Folder/idle_arrow_right.tscn" id="3_6e1vd"]
+[ext_resource type="PackedScene" uid="uid://tlfhhllvurv4" path="res://Battle Folder/idle_arrow_down.tscn" id="4_ij0fg"]
+[ext_resource type="PackedScene" uid="uid://32erbvlkvr04" path="res://Battle Folder/idle_arrow_up.tscn" id="5_lqeae"]
+[ext_resource type="Texture2D" uid="uid://q68k3fherwy1" path="res://Battle Folder/Sprite/fightingBackground.png" id="6_hkw6t"]
+[ext_resource type="AudioStream" uid="uid://5d7sbrra3b7i" path="res://Battle Folder/RiaVSAdin.mp3" id="7_bewex"]
+[ext_resource type="Texture2D" uid="uid://brxqt4ttyah02" path="res://Battle Folder/Sprite/riahealthbar.png" id="8_3xran"]
+[ext_resource type="Texture2D" uid="uid://dj2eyciyot1m6" path="res://Intro Folder/RiaHead.png" id="8_gwxnd"]
+[ext_resource type="Texture2D" uid="uid://167ge3v3t878" path="res://Battle Folder/Sprite/adinhealthbar.png" id="9_p6t4l"]
+[ext_resource type="Texture2D" uid="uid://dao507bp3jysx" path="res://Battle Folder/Sprite/Screenshot 2024-05-04 235406.png" id="9_rfa12"]
+[ext_resource type="Texture2D" uid="uid://12qhel1xuju1" path="res://Battle Folder/Sprite/Screenshot 2024-06-03 174634.png" id="9_s1qkl"]
+[ext_resource type="Texture2D" uid="uid://b1w3g66x58g" path="res://Intro Folder/AdinHead.png" id="9_ym5do"]
+[ext_resource type="Texture2D" uid="uid://dikofm3xl3738" path="res://Battle Folder/Sprite/Boss indicator/1x Healthbar.png" id="10_eo5jy"]
+[ext_resource type="Texture2D" uid="uid://15fymmd6lblj" path="res://Battle Folder/Sprite/Boss indicator/2x healthbar.png" id="11_i3aov"]
+[ext_resource type="Texture2D" uid="uid://1r63k14kme6f" path="res://Battle Folder/Sprite/redBackground.jpeg" id="13_kpqkv"]
+[ext_resource type="Texture2D" uid="uid://bmjyns7a70t0y" path="res://Battle Folder/Sprite/Screenshot 2024-05-04 235512.png" id="15_jbsgr"]
+[ext_resource type="Texture2D" uid="uid://c0yreht3yy05p" path="res://Battle Folder/Sprite/song meter images/songMeter00.png" id="17_orrp7"]
+[ext_resource type="Texture2D" uid="uid://hhgavfixp3gy" path="res://Battle Folder/Sprite/song meter images/songMeter01.png" id="18_72h3a"]
+[ext_resource type="Texture2D" uid="uid://dfv2rnt64xccb" path="res://Battle Folder/Sprite/song meter images/songMeter02.png" id="19_oc2ip"]
+[ext_resource type="Texture2D" uid="uid://c2ynaisxwgg86" path="res://Battle Folder/Sprite/song meter images/songMeter03.png" id="20_d5noa"]
+[ext_resource type="Texture2D" uid="uid://tyeqocahn2fb" path="res://Battle Folder/Sprite/song meter images/songMeter04.png" id="21_wvrhg"]
+[ext_resource type="Texture2D" uid="uid://bedjky8byhn3c" path="res://Battle Folder/Sprite/song meter images/songMeter05.png" id="22_prfav"]
+[ext_resource type="Texture2D" uid="uid://dskshhnv0spqj" path="res://Battle Folder/Sprite/song meter images/songMeter06.png" id="23_h0mx7"]
+[ext_resource type="Texture2D" uid="uid://dcd0l0o62nnbp" path="res://Battle Folder/Sprite/song meter images/songMeter07.png" id="24_lbmvw"]
+[ext_resource type="Texture2D" uid="uid://bywyfkwokfvu4" path="res://Battle Folder/Sprite/song meter images/songMeter08.png" id="25_vhljc"]
+[ext_resource type="Texture2D" uid="uid://8kc8dx75kmm1" path="res://Battle Folder/Sprite/song meter images/songMeter09.png" id="26_poic1"]
+[ext_resource type="Texture2D" uid="uid://01gbl6lejts1" path="res://Battle Folder/Sprite/song meter images/songMeter10.png" id="27_5dk63"]
+[ext_resource type="Texture2D" uid="uid://7b4lg4b3gs76" path="res://Battle Folder/Sprite/song meter images/songMeter11.png" id="28_lv0o0"]
+[ext_resource type="Texture2D" uid="uid://bym006q0r8d4s" path="res://Battle Folder/Sprite/song meter images/songMeter12.png" id="29_aoaqg"]
+[ext_resource type="Texture2D" uid="uid://7d7xi7p37rog" path="res://Battle Folder/Sprite/song meter images/songMeter13.png" id="30_qxhha"]
+[ext_resource type="Texture2D" uid="uid://4e8gw28kevc7" path="res://Battle Folder/Sprite/song meter images/songMeter14.png" id="31_cegjw"]
+[ext_resource type="Texture2D" uid="uid://burxvrurikhml" path="res://Battle Folder/Sprite/song meter images/songMeter15.png" id="32_upstk"]
+[ext_resource type="Texture2D" uid="uid://cvi0mo2jx8wgy" path="res://Battle Folder/Sprite/song meter images/songMeter16.png" id="33_dbrtm"]
+[ext_resource type="Texture2D" uid="uid://bn3bki6wgmr12" path="res://Battle Folder/Sprite/song meter images/songMeter17.png" id="34_m4ckb"]
+[ext_resource type="Texture2D" uid="uid://bx6aybqx1bgs8" path="res://Battle Folder/Sprite/song meter images/songMeter18.png" id="35_ydnis"]
+[ext_resource type="Texture2D" uid="uid://7ptnuijtwykv" path="res://Battle Folder/Sprite/song meter images/songMeter19.png" id="36_d8w2m"]
+[ext_resource type="Texture2D" uid="uid://rsgnpqg6oykq" path="res://Battle Folder/Sprite/song meter images/songMeter20.png" id="37_o57w8"]
+[ext_resource type="Texture2D" uid="uid://d0tpuujfxi1bw" path="res://Battle Folder/Sprite/song meter images/songMeter21.png" id="38_6wj0q"]
+[ext_resource type="Texture2D" uid="uid://b1oq7pro0vpeh" path="res://Battle Folder/Sprite/song meter images/songMeter22.png" id="39_xy6qu"]
+[ext_resource type="Texture2D" uid="uid://doy1xtn27afmf" path="res://Battle Folder/Sprite/song meter images/songMeter23.png" id="40_fvkd2"]
+[ext_resource type="Texture2D" uid="uid://bbjwukr6m604l" path="res://Battle Folder/Sprite/song meter images/songMeter24.png" id="41_uqmb6"]
+[ext_resource type="Texture2D" uid="uid://b0b4u85yo7yyd" path="res://Battle Folder/Sprite/song meter images/songMeter25.png" id="42_2wdfg"]
+[ext_resource type="Texture2D" uid="uid://b7gnn2gpfgn3r" path="res://Battle Folder/Sprite/song meter images/songMeter26.png" id="43_y1ftg"]
+[ext_resource type="Texture2D" uid="uid://c8pxvag5o7fhc" path="res://Battle Folder/Sprite/song meter images/songMeter27.png" id="44_j3qbe"]
+[ext_resource type="Texture2D" uid="uid://es1ct8sh387t" path="res://Battle Folder/Sprite/song meter images/songMeter28.png" id="45_ulmrf"]
+[ext_resource type="Texture2D" uid="uid://b45twcylih3y7" path="res://Battle Folder/Sprite/song meter images/songMeter29.png" id="46_stca5"]
+[ext_resource type="Texture2D" uid="uid://c45jv0kh4oa4e" path="res://Battle Folder/Sprite/song meter images/songMeter30.png" id="47_f0av2"]
+[ext_resource type="Texture2D" uid="uid://7u8fgidm5wu1" path="res://Battle Folder/Sprite/song meter images/songMeter32.png" id="48_y2odv"]
+[ext_resource type="Texture2D" uid="uid://b28bo3hryapdh" path="res://Battle Folder/Sprite/song meter images/songMeter33.png" id="49_bg614"]
+[ext_resource type="Texture2D" uid="uid://dcym63higarvm" path="res://Battle Folder/Sprite/ChoiceBar/thechoicebox.png" id="50_171f3"]
+[ext_resource type="Texture2D" uid="uid://ddiybrp35k2vb" path="res://Battle Folder/Sprite/ChoiceBar/resteasy.png" id="51_1piwy"]
+[ext_resource type="Texture2D" uid="uid://us48c5ng8jk2" path="res://Battle Folder/Sprite/ChoiceBar/Screenshot 2024-05-24 at 4.28.38 PM.png" id="51_ytfy2"]
+[ext_resource type="Texture2D" uid="uid://sicaxsw7c3tp" path="res://Battle Folder/Sprite/ChoiceBar/notenormal.png" id="52_vmcpv"]
+[ext_resource type="Texture2D" uid="uid://c6yhj6t1xa653" path="res://Battle Folder/Sprite/ChoiceBar/noearlyice.png" id="53_u1q3n"]
+[ext_resource type="Texture2D" uid="uid://cvdwvayjegnhj" path="res://Battle Folder/Sprite/ChoiceBar/combofire.png" id="54_wivbk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wsyal"]
+texture = ExtResource("9_rfa12")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m7lgq"]
+texture = ExtResource("9_s1qkl")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6dir6"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0f5gn"]
+bg_color = Color(0, 1, 0, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qwhq"]
+bg_color = Color(1, 0, 0, 0)
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21mxi"]
+bg_color = Color(0, 0.556863, 1, 1)
+
+[node name="RealBattle" type="Node2D" groups=["battle"]]
+script = ExtResource("1_uxlrh")
+
+[node name="Create" type="Node2D" parent="."]
+
+[node name="Position2D_AL" type="Marker2D" parent="Create"]
+position = Vector2(443.5, -8)
+
+[node name="Position2D_AU" type="Marker2D" parent="Create"]
+position = Vector2(534, -8)
+
+[node name="Position2D_AD" type="Marker2D" parent="Create"]
+position = Vector2(634, -8)
+
+[node name="Position2D_AR" type="Marker2D" parent="Create"]
+position = Vector2(725, -8)
+
+[node name="Idle_ArrowLeft" parent="." instance=ExtResource("2_ay53c")]
+position = Vector2(444, 592)
+
+[node name="idle arrow right" parent="." instance=ExtResource("3_6e1vd")]
+position = Vector2(724, 592)
+
+[node name="arrowdownidle" parent="." instance=ExtResource("4_ij0fg")]
+position = Vector2(633, 592)
+
+[node name="Idle_Arrow_up" parent="." instance=ExtResource("5_lqeae")]
+position = Vector2(533, 592)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -6.0
+offset_top = -3.0
+offset_right = 1274.0
+offset_bottom = 717.0
+scale = Vector2(0.908, 0.908)
+texture = ExtResource("6_hkw6t")
+metadata/_edit_lock_ = true
+
+[node name="RiaVsAdin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_bewex")
+bus = &"Battle"
+
+[node name="newSongBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = 30.0
+offset_top = 34.0
+offset_right = 330.0
+offset_bottom = 43.0
+theme_override_styles/background = SubResource("StyleBoxTexture_wsyal")
+theme_override_styles/fill = SubResource("StyleBoxTexture_m7lgq")
+max_value = 150.0
+value = 150.0
+show_percentage = false
+
+[node name="playerHealthBar" type="ProgressBar" parent="."]
+offset_left = 65.7
+offset_top = 422.82
+offset_right = 293.2
+offset_bottom = 468.62
+theme_override_styles/background = SubResource("StyleBoxFlat_6dir6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0f5gn")
+value = 100.0
+show_percentage = false
+
+[node name="enemyHealthBar2" type="ProgressBar" parent="."]
+offset_left = 873.7
+offset_top = 423.02
+offset_right = 1101.2
+offset_bottom = 468.82
+theme_override_styles/background = SubResource("StyleBoxTexture_wsyal")
+theme_override_styles/fill = SubResource("StyleBoxTexture_m7lgq")
+max_value = 150.0
+value = 150.0
+show_percentage = false
+
+[node name="enemyHealthBar" type="ProgressBar" parent="."]
+offset_left = 873.7
+offset_top = 423.02
+offset_right = 1101.2
+offset_bottom = 468.82
+theme_override_styles/background = SubResource("StyleBoxFlat_5qwhq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_21mxi")
+max_value = 150.0
+value = 150.0
+show_percentage = false
+
+[node name="1x health bar" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1004, 436)
+scale = Vector2(1.4375, 1.0625)
+texture = ExtResource("10_eo5jy")
+
+[node name="2x health bar" type="Sprite2D" parent="."]
+position = Vector2(1000, 448)
+scale = Vector2(1.5, 1.125)
+texture = ExtResource("11_i3aov")
+
+[node name="riahealthbarholder" type="Sprite2D" parent="."]
+position = Vector2(175, 423.52)
+scale = Vector2(0.907143, 0.907143)
+texture = ExtResource("8_3xran")
+
+[node name="ahbh" type="Sprite2D" parent="."]
+position = Vector2(982.7, 423.02)
+scale = Vector2(0.907, 0.907)
+texture = ExtResource("9_p6t4l")
+
+[node name="RiaFace" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(180.2, 237.52)
+scale = Vector2(0.871, 0.871)
+texture = ExtResource("8_gwxnd")
+
+[node name="RiaTurnBackground" type="Sprite2D" parent="RiaFace"]
+show_behind_parent = true
+position = Vector2(-0.574033, 0.574065)
+scale = Vector2(0.87, 1.541)
+texture = ExtResource("13_kpqkv")
+
+[node name="AdinFace" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(988.2, 237.52)
+scale = Vector2(0.871, 0.871)
+texture = ExtResource("9_ym5do")
+
+[node name="AdinTurnBackground" type="Sprite2D" parent="AdinFace"]
+show_behind_parent = true
+position = Vector2(-2.90871e-05, 0.574057)
+scale = Vector2(0.87, 1.547)
+texture = ExtResource("13_kpqkv")
+
+[node name="rui\'s findy guy" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(911, 331)
+rotation = -0.959931
+scale = Vector2(5.56815, 0.199473)
+texture = ExtResource("15_jbsgr")
+
+[node name="SongMeter" type="Node2D" parent="."]
+
+[node name="Sprite2D0" type="Sprite2D" parent="SongMeter"]
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("17_orrp7")
+
+[node name="Sprite2D1" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("17_orrp7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("18_72h3a")
+
+[node name="Sprite2D3" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("19_oc2ip")
+
+[node name="Sprite2D4" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("20_d5noa")
+
+[node name="Sprite2D5" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("21_wvrhg")
+
+[node name="Sprite2D6" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("22_prfav")
+
+[node name="Sprite2D7" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("23_h0mx7")
+
+[node name="Sprite2D8" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("24_lbmvw")
+
+[node name="Sprite2D9" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("25_vhljc")
+
+[node name="Sprite2D10" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("26_poic1")
+
+[node name="Sprite2D11" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("27_5dk63")
+
+[node name="Sprite2D12" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("28_lv0o0")
+
+[node name="Sprite2D13" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("29_aoaqg")
+
+[node name="Sprite2D14" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("30_qxhha")
+
+[node name="Sprite2D15" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("31_cegjw")
+
+[node name="Sprite2D16" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("32_upstk")
+
+[node name="Sprite2D17" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("33_dbrtm")
+
+[node name="Sprite2D18" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("34_m4ckb")
+
+[node name="Sprite2D19" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("35_ydnis")
+
+[node name="Sprite2D20" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("36_d8w2m")
+
+[node name="Sprite2D21" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("37_o57w8")
+
+[node name="Sprite2D22" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("38_6wj0q")
+
+[node name="Sprite2D23" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("39_xy6qu")
+
+[node name="Sprite2D24" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("40_fvkd2")
+
+[node name="Sprite2D25" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("41_uqmb6")
+
+[node name="Sprite2D26" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("42_2wdfg")
+
+[node name="Sprite2D27" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("43_y1ftg")
+
+[node name="Sprite2D28" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("44_j3qbe")
+
+[node name="Sprite2D29" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("45_ulmrf")
+
+[node name="Sprite2D30" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("46_stca5")
+
+[node name="Sprite2D31" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("47_f0av2")
+
+[node name="Sprite2D32" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("48_y2odv")
+
+[node name="Sprite2D33" type="Sprite2D" parent="SongMeter"]
+visible = false
+position = Vector2(184.8, 60.4)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("49_bg614")
+
+[node name="ChoiceBox" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(584, 577.228)
+scale = Vector2(0.851064, 0.902534)
+texture = ExtResource("50_171f3")
+
+[node name="Easy" type="Sprite2D" parent="ChoiceBox"]
+position = Vector2(-160.387, -4.53088)
+scale = Vector2(0.608864, 0.617837)
+texture = ExtResource("51_1piwy")
+
+[node name="EasySelected" type="Sprite2D" parent="ChoiceBox/Easy"]
+visible = false
+show_behind_parent = true
+position = Vector2(4.58956e-06, -0.916628)
+scale = Vector2(0.25246, 0.296641)
+texture = ExtResource("51_ytfy2")
+
+[node name="Normal" type="Sprite2D" parent="ChoiceBox"]
+position = Vector2(-61.1, -4.53081)
+scale = Vector2(0.598182, 0.576648)
+texture = ExtResource("52_vmcpv")
+
+[node name="NormalSelected" type="Sprite2D" parent="ChoiceBox/Normal"]
+show_behind_parent = true
+position = Vector2(2.40954, -1.61357)
+scale = Vector2(0.259349, 0.321178)
+texture = ExtResource("51_ytfy2")
+
+[node name="NoEarly" type="Sprite2D" parent="ChoiceBox"]
+position = Vector2(70.4999, -4.53081)
+scale = Vector2(0.598182, 0.576648)
+texture = ExtResource("53_u1q3n")
+
+[node name="NoEarlySelected" type="Sprite2D" parent="ChoiceBox/NoEarly"]
+visible = false
+show_behind_parent = true
+position = Vector2(-0.982057, -0.982248)
+scale = Vector2(0.256968, 0.317829)
+texture = ExtResource("51_ytfy2")
+
+[node name="Combo" type="Sprite2D" parent="ChoiceBox"]
+position = Vector2(171.55, -4.53082)
+scale = Vector2(0.555454, 0.576649)
+texture = ExtResource("54_wivbk")
+
+[node name="ComboSelected" type="Sprite2D" parent="ChoiceBox/Combo"]
+visible = false
+show_behind_parent = true
+position = Vector2(-3.17305, 0.982017)
+scale = Vector2(0.276736, 0.328249)
+texture = ExtResource("51_ytfy2")
+
+[node name="ComboCounter" type="Label" parent="."]
+offset_left = 794.0
+offset_top = 7.0
+offset_right = 980.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 30
+
+[connection signal="area_shape_entered" from="Idle_Arrow_up" to="Idle_Arrow_up" method="_on_area_shape_entered"]
+[connection signal="area_shape_exited" from="Idle_Arrow_up" to="Idle_Arrow_up" method="_on_area_shape_exited"]

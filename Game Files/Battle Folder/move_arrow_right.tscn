@@ -1,0 +1,181 @@
+[gd_scene load_steps=30 format=3 uid="uid://dn8k86chyoa4x"]
+
+[ext_resource type="Script" path="res://Battle Folder/Script/movearrowright.gd" id="1_ijop2"]
+[ext_resource type="Texture2D" uid="uid://nxqejpw1acud" path="res://Battle Folder/Sprite/falling notes/wagakama-1.png.png" id="2_pyxxm"]
+[ext_resource type="Texture2D" uid="uid://dmy8fa4drcsuf" path="res://Battle Folder/Sprite/falling notes/whiteframe.png" id="3_ja2ji"]
+[ext_resource type="Texture2D" uid="uid://haseggjeukd4" path="res://Battle Folder/Sprite/falling notes/wagakama-2.png.png" id="4_mib4a"]
+[ext_resource type="Texture2D" uid="uid://dggc5h6pntlg5" path="res://Battle Folder/Sprite/falling notes/wagakama-3.png.png" id="5_xvsk8"]
+[ext_resource type="Texture2D" uid="uid://bogerpf5h7ogu" path="res://Battle Folder/Sprite/falling notes/wagakama-4.png.png" id="6_604xu"]
+[ext_resource type="Texture2D" uid="uid://iqdcqq7vi3td" path="res://Battle Folder/Sprite/falling notes/wagakama-5.png.png" id="7_f3b1r"]
+[ext_resource type="Texture2D" uid="uid://ycrcb038rlrd" path="res://Battle Folder/Sprite/Perfect etc/Perfect 1.png" id="8_cr5q0"]
+[ext_resource type="Texture2D" uid="uid://sd36o6nsnxt7" path="res://Battle Folder/Sprite/Perfect etc/Perfect 2.png" id="9_heeri"]
+[ext_resource type="Texture2D" uid="uid://gvwy3d52uio1" path="res://Battle Folder/Sprite/Perfect etc/Perfect 3.png" id="10_5s6ds"]
+[ext_resource type="Texture2D" uid="uid://8khihp5r036e" path="res://Battle Folder/Sprite/Perfect etc/Perfect 4.png" id="11_n2h0t"]
+[ext_resource type="Texture2D" uid="uid://6677vn0jstmf" path="res://Battle Folder/Sprite/Perfect etc/Great 1.png" id="12_i2v7i"]
+[ext_resource type="Texture2D" uid="uid://bewaomqmtbuur" path="res://Battle Folder/Sprite/Perfect etc/Great 2.png" id="13_w0oyd"]
+[ext_resource type="Texture2D" uid="uid://dmilbefi13l2v" path="res://Battle Folder/Sprite/Perfect etc/Great 3.png" id="14_gs2je"]
+[ext_resource type="Texture2D" uid="uid://dhc1i36wuy3hh" path="res://Battle Folder/Sprite/Perfect etc/Great 4.png" id="15_f4rsk"]
+[ext_resource type="Texture2D" uid="uid://et2l45x0psci" path="res://Battle Folder/Sprite/Perfect etc/Ok 1.png" id="16_iju0l"]
+[ext_resource type="Texture2D" uid="uid://blymr17a2y4y2" path="res://Battle Folder/Sprite/Perfect etc/Ok 2.png" id="17_kcdot"]
+[ext_resource type="Texture2D" uid="uid://bg37tqp078ibo" path="res://Battle Folder/Sprite/Perfect etc/Ok 3.png" id="18_xv28k"]
+[ext_resource type="Texture2D" uid="uid://cfctjrsecgelj" path="res://Battle Folder/Sprite/Perfect etc/Ok 4.png" id="19_mp8lq"]
+[ext_resource type="Texture2D" uid="uid://cgxkh3wv460vl" path="res://Battle Folder/Sprite/Perfect etc/miss1.png" id="20_2fnku"]
+[ext_resource type="Texture2D" uid="uid://dynhuliaqovww" path="res://Battle Folder/Sprite/Perfect etc/miss2.png" id="21_1ecsd"]
+[ext_resource type="Texture2D" uid="uid://cvneg5ixqhmfy" path="res://Battle Folder/Sprite/Perfect etc/miss3.png" id="22_sbu4r"]
+[ext_resource type="Texture2D" uid="uid://b7l8hwku8yo3x" path="res://Battle Folder/Sprite/Perfect etc/miss4.png" id="23_b1j6a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nj1u1"]
+size = Vector2(127, 125)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o7be2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pyxxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ja2ji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mib4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xvsk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_604xu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_f3b1r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wkxo5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_cr5q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_heeri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5s6ds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_n2h0t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8o35d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_i2v7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_w0oyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_gs2je")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_f4rsk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_okokb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_iju0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_kcdot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_xv28k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_mp8lq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_61n0a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_2fnku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1ecsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_sbu4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_b1j6a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="movearrowright" type="Area2D" groups=["right"]]
+position = Vector2(18, -17)
+scale = Vector2(1.034, 1.034)
+script = ExtResource("1_ijop2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.378864, 0.0229015)
+scale = Vector2(0.49, 0.49)
+shape = SubResource("RectangleShape2D_nj1u1")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(18.4582, -8.3852)
+scale = Vector2(0.894, 0.894)
+sprite_frames = SubResource("SpriteFrames_o7be2")
+
+[node name="Perfect" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(3.02703, 5.567)
+scale = Vector2(3.826, 3.826)
+sprite_frames = SubResource("SpriteFrames_wkxo5")
+
+[node name="Great" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(16.5667, 5.567)
+scale = Vector2(4.783, 3.826)
+sprite_frames = SubResource("SpriteFrames_8o35d")
+
+[node name="Ok" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(54.5538, 5.12316)
+scale = Vector2(5.739, 3.826)
+sprite_frames = SubResource("SpriteFrames_okokb")
+
+[node name="Miss" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(2.938, -115)
+scale = Vector2(3.24415, 2.93809)
+sprite_frames = SubResource("SpriteFrames_61n0a")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="area_shape_exited" from="." to="." method="_on_area_shape_exited"]
+[connection signal="animation_looped" from="Sprite2D" to="." method="_on_sprite_2d_animation_looped"]
+[connection signal="animation_looped" from="Perfect" to="." method="_on_perfect_animation_looped"]
+[connection signal="animation_looped" from="Great" to="." method="_on_great_animation_looped"]
+[connection signal="animation_looped" from="Ok" to="." method="_on_ok_animation_looped"]
+[connection signal="animation_looped" from="Miss" to="." method="_on_miss_animation_looped"]
