@@ -1,22 +1,19 @@
-[gd_scene load_steps=63 format=3 uid="uid://bi7y2f3qsaexf"]
+[gd_scene load_steps=72 format=3 uid="uid://bi7y2f3qsaexf"]
 
-[ext_resource type="Script" path="res://Battle Folder/Script/RealBattle.gd" id="1_uxlrh"]
-[ext_resource type="PackedScene" uid="uid://nvfi3i7juano" path="res://Battle Folder/idle_arrow_left.tscn" id="2_ay53c"]
-[ext_resource type="PackedScene" uid="uid://dbhuepgmdy2sm" path="res://Battle Folder/idle_arrow_right.tscn" id="3_6e1vd"]
-[ext_resource type="PackedScene" uid="uid://tlfhhllvurv4" path="res://Battle Folder/idle_arrow_down.tscn" id="4_ij0fg"]
-[ext_resource type="PackedScene" uid="uid://32erbvlkvr04" path="res://Battle Folder/idle_arrow_up.tscn" id="5_lqeae"]
+[ext_resource type="Script" path="res://Battle Folder/RealBattle.gd" id="1_uxlrh"]
+[ext_resource type="Texture2D" uid="uid://wts5ecwih48v" path="res://Battle Folder/Sprite/wrongButton.png" id="2_rjcxr"]
 [ext_resource type="Texture2D" uid="uid://q68k3fherwy1" path="res://Battle Folder/Sprite/fightingBackground.png" id="6_hkw6t"]
 [ext_resource type="AudioStream" uid="uid://5d7sbrra3b7i" path="res://Battle Folder/RiaVSAdin.mp3" id="7_bewex"]
 [ext_resource type="Texture2D" uid="uid://brxqt4ttyah02" path="res://Battle Folder/Sprite/riahealthbar.png" id="8_3xran"]
 [ext_resource type="Texture2D" uid="uid://dj2eyciyot1m6" path="res://Intro Folder/RiaHead.png" id="8_gwxnd"]
 [ext_resource type="Texture2D" uid="uid://167ge3v3t878" path="res://Battle Folder/Sprite/adinhealthbar.png" id="9_p6t4l"]
-[ext_resource type="Texture2D" uid="uid://dao507bp3jysx" path="res://Battle Folder/Sprite/Screenshot 2024-05-04 235406.png" id="9_rfa12"]
-[ext_resource type="Texture2D" uid="uid://12qhel1xuju1" path="res://Battle Folder/Sprite/Screenshot 2024-06-03 174634.png" id="9_s1qkl"]
+[ext_resource type="Texture2D" uid="uid://dao507bp3jysx" path="res://Battle Folder/Sprite/screenshots of colours lmfao/Screenshot 2024-05-04 235406.png" id="9_rfa12"]
+[ext_resource type="Texture2D" uid="uid://12qhel1xuju1" path="res://Battle Folder/Sprite/screenshots of colours lmfao/Screenshot 2024-06-03 174634.png" id="9_s1qkl"]
 [ext_resource type="Texture2D" uid="uid://b1w3g66x58g" path="res://Intro Folder/AdinHead.png" id="9_ym5do"]
 [ext_resource type="Texture2D" uid="uid://dikofm3xl3738" path="res://Battle Folder/Sprite/Boss indicator/1x Healthbar.png" id="10_eo5jy"]
 [ext_resource type="Texture2D" uid="uid://15fymmd6lblj" path="res://Battle Folder/Sprite/Boss indicator/2x healthbar.png" id="11_i3aov"]
-[ext_resource type="Texture2D" uid="uid://1r63k14kme6f" path="res://Battle Folder/Sprite/redBackground.jpeg" id="13_kpqkv"]
-[ext_resource type="Texture2D" uid="uid://bmjyns7a70t0y" path="res://Battle Folder/Sprite/Screenshot 2024-05-04 235512.png" id="15_jbsgr"]
+[ext_resource type="Texture2D" uid="uid://1r63k14kme6f" path="res://Battle Folder/Sprite/screenshots of colours lmfao/redBackground.jpeg" id="13_kpqkv"]
+[ext_resource type="Texture2D" uid="uid://bmjyns7a70t0y" path="res://Battle Folder/Sprite/screenshots of colours lmfao/Screenshot 2024-05-04 235512.png" id="15_jbsgr"]
 [ext_resource type="Texture2D" uid="uid://c0yreht3yy05p" path="res://Battle Folder/Sprite/song meter images/songMeter00.png" id="17_orrp7"]
 [ext_resource type="Texture2D" uid="uid://hhgavfixp3gy" path="res://Battle Folder/Sprite/song meter images/songMeter01.png" id="18_72h3a"]
 [ext_resource type="Texture2D" uid="uid://dfv2rnt64xccb" path="res://Battle Folder/Sprite/song meter images/songMeter02.png" id="19_oc2ip"]
@@ -57,6 +54,150 @@
 [ext_resource type="Texture2D" uid="uid://c6yhj6t1xa653" path="res://Battle Folder/Sprite/ChoiceBar/noearlyice.png" id="53_u1q3n"]
 [ext_resource type="Texture2D" uid="uid://cvdwvayjegnhj" path="res://Battle Folder/Sprite/ChoiceBar/combofire.png" id="54_wivbk"]
 
+[sub_resource type="Animation" id="Animation_uu06w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_k1h5y"]
+resource_name = "wrongnote"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l68wu"]
+_data = {
+"RESET": SubResource("Animation_uu06w"),
+"wrongnote": SubResource("Animation_k1h5y")
+}
+
+[sub_resource type="Animation" id="Animation_q2b6n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oear3"]
+resource_name = "wrongnote"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rvvqy"]
+_data = {
+"RESET": SubResource("Animation_q2b6n"),
+"wrongnote": SubResource("Animation_oear3")
+}
+
+[sub_resource type="Animation" id="Animation_g2vb8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ys2rm"]
+resource_name = "wrongnote"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8bedw"]
+_data = {
+"RESET": SubResource("Animation_g2vb8"),
+"wrongnote": SubResource("Animation_ys2rm")
+}
+
+[sub_resource type="Animation" id="Animation_7jwhk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fmbt5"]
+resource_name = "wrongnote"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xeruk"]
+_data = {
+"RESET": SubResource("Animation_7jwhk"),
+"wrongnote": SubResource("Animation_fmbt5")
+}
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wsyal"]
 texture = ExtResource("9_rfa12")
 
@@ -86,26 +227,63 @@ script = ExtResource("1_uxlrh")
 [node name="Position2D_AL" type="Marker2D" parent="Create"]
 position = Vector2(443.5, -8)
 
+[node name="Sprite2D" type="Sprite2D" parent="Create/Position2D_AL"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(9, 590.5)
+scale = Vector2(0.92, 0.92)
+texture = ExtResource("2_rjcxr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Create/Position2D_AL"]
+libraries = {
+"": SubResource("AnimationLibrary_l68wu")
+}
+speed_scale = 10.0
+
 [node name="Position2D_AU" type="Marker2D" parent="Create"]
 position = Vector2(534, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Create/Position2D_AU"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(9.5, 590.5)
+texture = ExtResource("2_rjcxr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Create/Position2D_AU"]
+libraries = {
+"": SubResource("AnimationLibrary_rvvqy")
+}
+speed_scale = 10.0
 
 [node name="Position2D_AD" type="Marker2D" parent="Create"]
 position = Vector2(634, -8)
 
+[node name="Sprite2D" type="Sprite2D" parent="Create/Position2D_AD"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(9.5, 590.5)
+texture = ExtResource("2_rjcxr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Create/Position2D_AD"]
+libraries = {
+"": SubResource("AnimationLibrary_8bedw")
+}
+speed_scale = 10.0
+
 [node name="Position2D_AR" type="Marker2D" parent="Create"]
 position = Vector2(725, -8)
 
-[node name="Idle_ArrowLeft" parent="." instance=ExtResource("2_ay53c")]
-position = Vector2(444, 592)
+[node name="Sprite2D" type="Sprite2D" parent="Create/Position2D_AR"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(9.5, 590.5)
+texture = ExtResource("2_rjcxr")
 
-[node name="idle arrow right" parent="." instance=ExtResource("3_6e1vd")]
-position = Vector2(724, 592)
-
-[node name="arrowdownidle" parent="." instance=ExtResource("4_ij0fg")]
-position = Vector2(633, 592)
-
-[node name="Idle_Arrow_up" parent="." instance=ExtResource("5_lqeae")]
-position = Vector2(533, 592)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Create/Position2D_AR"]
+libraries = {
+"": SubResource("AnimationLibrary_xeruk")
+}
+speed_scale = 10.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
@@ -482,5 +660,7 @@ offset_right = 980.0
 offset_bottom = 71.0
 theme_override_font_sizes/font_size = 30
 
-[connection signal="area_shape_entered" from="Idle_Arrow_up" to="Idle_Arrow_up" method="_on_area_shape_entered"]
-[connection signal="area_shape_exited" from="Idle_Arrow_up" to="Idle_Arrow_up" method="_on_area_shape_exited"]
+[connection signal="animation_finished" from="Create/Position2D_AL/AnimationPlayer" to="." method="_on_left_animation_finished"]
+[connection signal="animation_finished" from="Create/Position2D_AU/AnimationPlayer" to="." method="_on_up_animation_finished"]
+[connection signal="animation_finished" from="Create/Position2D_AD/AnimationPlayer" to="." method="_on_down_animation_finished"]
+[connection signal="animation_finished" from="Create/Position2D_AR/AnimationPlayer" to="." method="_on_right_animation_finished"]

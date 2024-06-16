@@ -17,7 +17,7 @@ config/icon="res://Intro Folder/RiaHead.png"
 
 [autoload]
 
-Global="*res://Battle Folder/Script/Global.gd"
+Global="*res://Global.gd"
 
 [display]
 
