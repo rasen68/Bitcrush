@@ -41,7 +41,8 @@ func _process(delta):
 					playerHealth.value -= 2
 				elif Global.comboCounter > 70:
 					playerHealth.value -= 0
-				else:playerHealth.value -= 5
+				else:
+					playerHealth.value -= 5
 			get_tree().call_group("battle", "damageShake")
 	
 	if myPos > Global.disappearMargin and slashable:
@@ -76,16 +77,18 @@ func slash():
 					hit = false
 					secondify = false
 					get_tree().call_group(group, "unSecond")
+					print("Hit first!" + group)
 			if isDoubleSecond:
 				if Global.deadCenter - myPos > Global.magicalDoubleMargin:
 					hit = false
+					print("Hit second!" + group)
 		
 		var perfectHit = myPos > Global.perfectMargin[0] and myPos < Global.perfectMargin[1]
 		var greatHit = (myPos >=  Global.greatMargin[0] and myPos <=  Global.perfectMargin[0]) or (myPos <=  Global.greatMargin[1] and myPos >=  Global.perfectMargin[1])
 		var okHit = (myPos >=  Global.okMargin[0] and myPos <=  Global.greatMargin[0]) or (myPos <=  Global.okMargin[1] and myPos >=  Global.greatMargin[1])
 		
 		if hit:
-			set_process(not is_processing())
+			set_process(false)
 			$Sprite2D.play("default")
 			get_tree().call_group("battle", "register" + group)
 			var amount = 0

@@ -91,8 +91,6 @@ func _process(_delta):
 
 	if Global.comboCounter > 50:
 		$RiaFace.texture = riaFocusedFace
-	else:
-		$RiaFace.texture = riaRegularFace
 	
 	# Update song meter
 	if songMeterCounter < 32:
@@ -240,14 +238,13 @@ func songBreak():
 		choiceSelect()
 	else:
 		$ChoiceBox.visible = false
-	
 
 func timeCheck(milliTime):
 	if milliTime < 4800:
 		isBreak = true
 		songBreak()
 	elif milliTime < 32500:
-		playerTurn()
+		enemyTurn()
 		songBreak()
 	elif milliTime < 36500:
 		isBreak = true
