@@ -13,6 +13,7 @@ var myPos = float(global_position.y)
 var slashable = true
 
 var canHurt = true
+var group = ""
 
 func _process(delta):
 	# Move
@@ -20,7 +21,8 @@ func _process(delta):
 	myPos += float(Global.noteSpeed * delta)
 	
 	if secondify:
-		get_tree().call_group(self.get_groups()[0], "getOtherNotes", myPos)
+		get_tree().call_group(group, "getOtherNotes", myPos)
+	
 	# Screen Exit
 	if myPos > Global.hurtMargin and canHurt:
 		canHurt = false
@@ -47,6 +49,9 @@ func _process(delta):
 		$Miss.show()
 		$Miss.play("default")
 
+func makeGroup(direction):
+	group = direction
+
 func getOtherNotes(loc):
 	if myPos - loc > 25 and myPos - loc < 75:
 		isDoubleFirst = true
@@ -70,7 +75,7 @@ func slash():
 				if myPos - Global.deadCenter > Global.magicalDoubleMargin:
 					hit = false
 					secondify = false
-					get_tree().call_group(self.get_groups()[0], "unSecond")
+					get_tree().call_group(group, "unSecond")
 			if isDoubleSecond:
 				if Global.deadCenter - myPos > Global.magicalDoubleMargin:
 					hit = false
@@ -82,14 +87,7 @@ func slash():
 		if hit:
 			set_process(not is_processing())
 			$Sprite2D.play("default")
-			if self.is_in_group("left"):
-				get_tree().call_group("battle", "registerleft")
-			elif self.is_in_group("up"):
-				get_tree().call_group("battle", "registerup")
-			elif self.is_in_group("down"):
-				get_tree().call_group("battle", "registerdown")
-			else:
-				get_tree().call_group("battle", "registerright")
+			get_tree().call_group("battle", "register" + group)
 			var amount = 0
 			if perfectHit:
 				amount = 1.5

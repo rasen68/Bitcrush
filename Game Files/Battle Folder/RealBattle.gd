@@ -141,7 +141,6 @@ func _input(event):
 			else:
 				$Create/Position2D_AR/AnimationPlayer.play("wrongnote")
 
-
 func registerleft():
 	leftHit = true
 
@@ -167,6 +166,7 @@ func noteOneCheck(currentTime):
 				get_parent().add_child(al)
 				al.global_position = $Create/Position2D_AL.global_position
 				al.add_to_group("left")
+				get_tree().call_group("left", "makeGroup", "left")
 			countOne += 1
 
 func noteTwoCheck(currentTime):
@@ -177,6 +177,7 @@ func noteTwoCheck(currentTime):
 				get_parent().add_child(au)
 				au.global_position = $Create/Position2D_AU.global_position
 				au.add_to_group("up")
+				get_tree().call_group("up", "makeGroup", "up")
 			countTwo += 1
 
 func noteThreeCheck(currentTime):
@@ -187,6 +188,7 @@ func noteThreeCheck(currentTime):
 				get_parent().add_child(ad)
 				ad.global_position = $Create/Position2D_AD.global_position
 				ad.add_to_group("down")
+				get_tree().call_group("down", "makeGroup", "down")
 			countThree += 1
 
 func noteFourCheck(currentTime):
@@ -197,6 +199,7 @@ func noteFourCheck(currentTime):
 				get_parent().add_child(ar)
 				ar.global_position = $Create/Position2D_AR.global_position
 				ar.add_to_group("right")
+				get_tree().call_group("right", "makeGroup", "right")
 			countFour += 1
 
 func playerTurn():
