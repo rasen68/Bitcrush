@@ -26,6 +26,7 @@ func _process(delta):
 	# Screen Exit
 	if myPos > Global.hurtMargin and canHurt:
 		canHurt = false
+		var hurt = true
 		Global.comboCounter = 0 
 		if not isPlayerTurn:
 			if choice == "Normal":
@@ -41,9 +42,10 @@ func _process(delta):
 					playerHealth.value -= 2
 				elif Global.comboCounter > 70:
 					playerHealth.value -= 0
+					hurt = false
 				else:
 					playerHealth.value -= 5
-			get_tree().call_group("battle", "damageShake")
+			get_tree().call_group("battle", "damageShake", hurt)
 	
 	if myPos > Global.disappearMargin and slashable:
 		set_process(false)

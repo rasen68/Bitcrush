@@ -212,8 +212,8 @@ func enemyTurn():
 	$RiaFace/RiaTurnBackground.visible = false
 	$AdinFace/AdinTurnBackground.visible = true
 
-func damageShake():
-	if not shaking:
+func damageShake(hurt):
+	if not shaking and hurt:
 		shaking = true
 		$RiaFace.texture = riaHurtFace
 		$RiaFace.position += Vector2(-1.5, -3.5)
