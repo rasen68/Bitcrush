@@ -70,7 +70,6 @@ var buttons_on = false
 var credits_open = false
 var thanks_open = false
 var options_open = false
-var menu_close = true
 var fullscreen_on = true
 var mouse_in_quit = false
 var mouse_in_options = false
@@ -78,6 +77,7 @@ var mouse_in_credits = false
 var mouse_in_play = false
 var mouse_in_keybind = false
 var credits_into_options = false
+var options_into_options = false
 var everything_off = false
 var selected_keybind = [null, 0]
 
@@ -101,56 +101,60 @@ func _ready():
 	$Options/keybind4/AnimatedSprite2D.frame = keysDict[KEY_K][0]
 	$Options/keybind4/AnimatedSprite2D.position.x = -300
 	
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-
+#	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+ 
+# Main button mouse detection (probably works)
 func _on_options_mouse_entered():
 	mouse_in_options = true
 	if buttons_on and not everything_off:
 		$Menu2/Area2D3/optionsHover.show()
 	if credits_open or thanks_open:
 		credits_into_options = true
-
+	if options_open:
+		options_into_options = true
 func _on_credits_mouse_entered():
 	mouse_in_credits = true
 	if buttons_on and not everything_off:
 		$Menu2/Area2D4/creditsHover.show()
-
 func _on_play_mouse_entered():
 	mouse_in_play = true
 	if buttons_on and not everything_off:
 		$Menu2/Area2D2/playHover.show()
-
 func _on_quit_mouse_entered():
 	mouse_in_quit = true
 	if buttons_on and not everything_off:
 		$Menu2/Area2D/quitHover.show()
-
 func _on_options_mouse_exited():
 	mouse_in_options = false
 	credits_into_options = false
+	options_into_options = false
 	$Menu2/Area2D3/optionsHover.hide()
-	
 func _on_credits_mouse_exited():
 	mouse_in_credits = false
 	$Menu2/Area2D4/creditsHover.hide()
-
 func _on_play_mouse_exited():
 	mouse_in_play = false
 	$Menu2/Area2D2/playHover.hide()
-
 func _on_quit_mouse_exited():
 	mouse_in_quit = false
 	$Menu2/Area2D/quitHover.hide()
 
 func _on_options_input_event(viewport, event, shape_idx):
 	if buttons_on and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if not credits_into_options:
+		print(credits_into_options)
+		print(options_into_options)
+		print(options_open)
+		print(credits_open)
+		if not credits_into_options and not options_into_options and not options_open and not credits_open:
 			$Options.show()
 			$Credits.hide()
+			$Menu2/Area2D3/optionsHover.hide()
 			options_open = true
 			buttons_on = false
-			menu_close = false
 			$boop.play()
+		else:
+			$Options.hide()
+			$Credits.hide()
 
 func _on_credits_input_event(viewport, event, shape_idx):
 	if buttons_on and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -158,7 +162,6 @@ func _on_credits_input_event(viewport, event, shape_idx):
 		$Options.hide()
 		credits_open = true
 		buttons_on = false
-		menu_close = false
 		$boop.play()
 
 func _on_play_input_event(viewport, event, shape_idx):
@@ -171,13 +174,29 @@ func _on_quit_input_event(viewport, event, shape_idx):
 		get_tree().quit()
 		$boop.play()
 
+func _on_menu_background_2_input_event(viewport, event, shape_idx):
+	if not everything_off and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		print("I'm like a guy if he was a loser")
+		$Credits.hide()
+		$SpecialThanks.hide()
+		$Options.hide()
+		buttons_on = true
+		credits_open = false
+		thanks_open = false
+		options_open = false
+		$woop.play()
+		if mouse_in_options:
+			$Menu2/Area2D3/optionsHover.show()
+		if mouse_in_quit:
+			$Menu2/Area2D/quitHover.show()
+
+# Logo animation and startup (works i think)
 func _on_logo_zone_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		$LoGoZone.hide()
 		$LogoAnimation.show()
 		$LogoAnimation.play("default")
 		$boop.play()
-
 func _on_logo_animation_looped():
 	$LogoAnimation.stop()
 	$LogoAnimation.hide()
@@ -192,52 +211,33 @@ func _on_logo_animation_looped():
 	buttons_on = true
 	$Options.hide()
 
+# Inner credits buttons (works)
 func _on_thanks_mouse_entered():
 	if credits_open:
 		$Credits/Area2D/thanksHover.show()
-
 func _on_thanks_mouse_exited():
 	$Credits/Area2D/thanksHover.hide()
-
 func _on_thanks_input_event(viewport, event, shape_idx):
 	if credits_open and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		credits_open = false
 		thanks_open = true
-		menu_close = false
 		$Credits.hide()
 		$SpecialThanks.show()
 		$boop.play()
-
 func _on_devs_mouse_entered():
 	if thanks_open:
 		$SpecialThanks/Area2D/devsHover.show()
-
 func _on_devs_mouse_exited():
 	$SpecialThanks/Area2D/devsHover.hide()
-
 func _on_devs_input_event(viewport, event, shape_idx):
 	if thanks_open and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		credits_open = true
 		thanks_open = false
-		menu_close = false
 		$Credits.show()
 		$SpecialThanks.hide()
 		$boop.play()
 
-func _on_menu_background_2_input_event(viewport, event, shape_idx):
-	if menu_close and not everything_off and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		$Credits.hide()
-		$SpecialThanks.hide()
-		$Options.hide()
-		buttons_on = true
-		credits_open = false
-		thanks_open = false
-		$woop.play()
-		if mouse_in_options:
-			$Menu2/Area2D3/optionsHover.show()
-		if mouse_in_quit:
-			$Menu2/Area2D/quitHover.show()
-
+''' Defunct "menu_close" toggles
 func _on_credits_menu_mouse_entered():
 	if credits_open:
 		menu_close = false
@@ -261,21 +261,21 @@ func _on_options_menu_mouse_entered():
 func _on_options_menu_mouse_exited():
 	if options_open:
 		menu_close = true
+'''
 
+# Fullscreen button (works)
 func _on_fullscreen_button_mouse_entered():
 	if options_open:
 		if fullscreen_on:
 			$Options/fullscreenButton/onHover.show()
 		else:
 			$Options/fullscreenButton/offHover.show()
-
 func _on_fullscreen_button_mouse_exited():
 	if options_open:
 		if fullscreen_on:
 			$Options/fullscreenButton/onHover.hide()
 		else:
 			$Options/fullscreenButton/offHover.hide()
-
 func _on_fullscreen_button_input_event(viewport, event, shape_idx):
 	if options_open and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if fullscreen_on:
@@ -298,64 +298,76 @@ func _on_fullscreen_button_input_event(viewport, event, shape_idx):
 # Adapted from https://www.youtube.com/watch?app=desktop&v=aFkRmtGiZCw
 func _on_master_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(audioIndexes[0], linear_to_db(value))
-
 func _on_sfx_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(audioIndexes[1], linear_to_db(value))
-
 func _on_bgm_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(audioIndexes[2], linear_to_db(value))
-
 func _on_battle_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(audioIndexes[3], linear_to_db(value))
 
+# Slider Boop woop (works)
 func _on_master_slider_drag_started():
 	$boop.play()
-
 func _on_master_slider_drag_ended(value_changed):
 	$woop.play()
-
 func _on_sfx_slider_drag_started():
 	$boop.play()
-
 func _on_sfx_slider_drag_ended(value_changed):
 	$woop.play()
-
 func _on_bgm_slider_drag_started():
 	$boop.play()
-
 func _on_bgm_slider_drag_ended(value_changed):
 	$woop.play()
-
 func _on_battle_slider_drag_started():
 	$boop.play()
-
 func _on_battle_slider_drag_ended(value_changed):
 	$woop.play()
 
+# Keybind mouse detection (works)
 func _on_keybind_1_mouse_entered():
 	mouse_in_keybind = true
-
 func _on_keybind_1_mouse_exited():
 	mouse_in_keybind = false
-
 func _on_keybind_2_mouse_entered():
 	mouse_in_keybind = true
-
 func _on_keybind_2_mouse_exited():
 	mouse_in_keybind = false
-
 func _on_keybind_3_mouse_entered():
 	mouse_in_keybind = true
-
 func _on_keybind_3_mouse_exited():
 	mouse_in_keybind = false
-
 func _on_keybind_4_mouse_entered():
 	mouse_in_keybind = true
-
 func _on_keybind_4_mouse_exited():
 	mouse_in_keybind = false
 
+# Keybind inputs (these mostly work)
+func _on_keybind_1_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		selected_keybind = [$Options/keybind1/AnimatedSprite2D, 0]
+		selected_keybind[0].frame = keysDict["HIGHLIGHT"][0]
+		selected_keybind[0].position.x = keysDict["HIGHLIGHT"][1] * -100
+		everything_off = true
+func _on_keybind_2_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		selected_keybind = [$Options/keybind2/AnimatedSprite2D, 1]
+		selected_keybind[0].frame = keysDict["HIGHLIGHT"][0]
+		selected_keybind[0].position.x = keysDict["HIGHLIGHT"][1] * -100
+		everything_off = true
+func _on_keybind_3_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		selected_keybind = [$Options/keybind3/AnimatedSprite2D, 2]
+		selected_keybind[0].frame = keysDict["HIGHLIGHT"][0]
+		selected_keybind[0].position.x = keysDict["HIGHLIGHT"][1] * -100
+		everything_off = true
+func _on_keybind_4_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		selected_keybind = [$Options/keybind4/AnimatedSprite2D, 3]
+		selected_keybind[0].frame = keysDict["HIGHLIGHT"][0]
+		selected_keybind[0].position.x = keysDict["HIGHLIGHT"][1] * -100
+		everything_off = true
+
+# Something to do with keybinds that I can't be bothered to figure out rn
 func _input(event):
 	if everything_off:
 		if not mouse_in_keybind and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -372,35 +384,6 @@ func _input(event):
 				selected_keybind[0].frame = keysDict["INVALID"][0]
 				selected_keybind[0].position[0] = keysDict["INVALID"][1] * -100
 				Global.keybinds[selected_keybind[1]] = null
-
-func _on_keybind_1_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		selected_keybind = [$Options/keybind1/AnimatedSprite2D, 0]
-		selected_keybind[0].frame = keysDict["HIGHLIGHT"][0]
-		selected_keybind[0].position.x = keysDict["HIGHLIGHT"][1] * -100
-		everything_off = true
-
-func _on_keybind_2_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		selected_keybind = [$Options/keybind2/AnimatedSprite2D, 1]
-		selected_keybind[0].frame = keysDict["HIGHLIGHT"][0]
-		selected_keybind[0].position.x = keysDict["HIGHLIGHT"][1] * -100
-		everything_off = true
-
-func _on_keybind_3_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		selected_keybind = [$Options/keybind3/AnimatedSprite2D, 2]
-		selected_keybind[0].frame = keysDict["HIGHLIGHT"][0]
-		selected_keybind[0].position.x = keysDict["HIGHLIGHT"][1] * -100
-		everything_off = true
-
-func _on_keybind_4_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		selected_keybind = [$Options/keybind4/AnimatedSprite2D, 3]
-		selected_keybind[0].frame = keysDict["HIGHLIGHT"][0]
-		selected_keybind[0].position.x = keysDict["HIGHLIGHT"][1] * -100
-		everything_off = true
-
 func _process(delta):
 	var threads = [$Options/thread1, $Options/thread2, $Options/thread3, $Options/thread4]
 	for i in range(4):
