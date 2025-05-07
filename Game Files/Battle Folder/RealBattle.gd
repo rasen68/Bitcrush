@@ -244,7 +244,7 @@ func timeCheck(milliTime):
 		isBreak = true
 		songBreak()
 	elif milliTime < 32500:
-		enemyTurn()
+		playerTurn()
 		songBreak()
 	elif milliTime < 36500:
 		isBreak = true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=72 format=3 uid="uid://bi7y2f3qsaexf"]
 
-[ext_resource type="Script" path="res://Battle Folder/RealBattle.gd" id="1_uxlrh"]
+[ext_resource type="Script" uid="uid://dkm65o3cg3t4s" path="res://Battle Folder/RealBattle.gd" id="1_uxlrh"]
 [ext_resource type="Texture2D" uid="uid://wts5ecwih48v" path="res://Battle Folder/Sprite/wrongButton.png" id="2_rjcxr"]
 [ext_resource type="Texture2D" uid="uid://q68k3fherwy1" path="res://Battle Folder/Sprite/fightingBackground.png" id="6_hkw6t"]
 [ext_resource type="AudioStream" uid="uid://5d7sbrra3b7i" path="res://Battle Folder/RiaVSAdin.mp3" id="7_bewex"]
@@ -86,8 +86,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l68wu"]
 _data = {
-"RESET": SubResource("Animation_uu06w"),
-"wrongnote": SubResource("Animation_k1h5y")
+&"RESET": SubResource("Animation_uu06w"),
+&"wrongnote": SubResource("Animation_k1h5y")
 }
 
 [sub_resource type="Animation" id="Animation_q2b6n"]
@@ -122,8 +122,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rvvqy"]
 _data = {
-"RESET": SubResource("Animation_q2b6n"),
-"wrongnote": SubResource("Animation_oear3")
+&"RESET": SubResource("Animation_q2b6n"),
+&"wrongnote": SubResource("Animation_oear3")
 }
 
 [sub_resource type="Animation" id="Animation_g2vb8"]
@@ -158,8 +158,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8bedw"]
 _data = {
-"RESET": SubResource("Animation_g2vb8"),
-"wrongnote": SubResource("Animation_ys2rm")
+&"RESET": SubResource("Animation_g2vb8"),
+&"wrongnote": SubResource("Animation_ys2rm")
 }
 
 [sub_resource type="Animation" id="Animation_7jwhk"]
@@ -194,8 +194,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xeruk"]
 _data = {
-"RESET": SubResource("Animation_7jwhk"),
-"wrongnote": SubResource("Animation_fmbt5")
+&"RESET": SubResource("Animation_7jwhk"),
+&"wrongnote": SubResource("Animation_fmbt5")
 }
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wsyal"]
@@ -236,7 +236,7 @@ texture = ExtResource("2_rjcxr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Create/Position2D_AL"]
 libraries = {
-"": SubResource("AnimationLibrary_l68wu")
+&"": SubResource("AnimationLibrary_l68wu")
 }
 speed_scale = 10.0
 
@@ -251,7 +251,7 @@ texture = ExtResource("2_rjcxr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Create/Position2D_AU"]
 libraries = {
-"": SubResource("AnimationLibrary_rvvqy")
+&"": SubResource("AnimationLibrary_rvvqy")
 }
 speed_scale = 10.0
 
@@ -266,7 +266,7 @@ texture = ExtResource("2_rjcxr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Create/Position2D_AD"]
 libraries = {
-"": SubResource("AnimationLibrary_8bedw")
+&"": SubResource("AnimationLibrary_8bedw")
 }
 speed_scale = 10.0
 
@@ -281,7 +281,7 @@ texture = ExtResource("2_rjcxr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Create/Position2D_AR"]
 libraries = {
-"": SubResource("AnimationLibrary_xeruk")
+&"": SubResource("AnimationLibrary_xeruk")
 }
 speed_scale = 10.0
 
